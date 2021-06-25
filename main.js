@@ -1,3 +1,35 @@
+/*
+  Chapter 9: The Windwow Object
+  The window object is the global object in a browser.
+
+Global variables are actually properties of the window object in a browser environment.
+The window object has a Navigator property that references a Navigator object and returns that refernce.
+Methods of the window object include: alert, prompt(), confirm().
+
+The window.navigator object contains information about the browser that is being used. The userAgent property of the Navigator returns the information about the browser and the operating system being used. This is not always reliable though.
+
+The window.location object provides information about the URL of the current page.
+
+The window.history object keeps information about the pages that have been visited in the session.
+Some functions that can be performed in windows include; closing, moving, and resizing the windows.
+
+The window.screen object provides information about the user’s screen.
+
+ document.write() is an archaic method of writing text to the document and should be avoided.
+
+Cookies can be used to store small pieces of information between requests using the document.cookie property.
+
+The window.setTimeout() method can be used to invoke a function after a set amount of time. It can be canceled using the clearTimeout() method.
+
+The window.setInterval() method can be used to repeatedly invoke a function. It can be stopped using the clearInterval() method.
+
+The window.requestAnimationFrame() method can be used to produce smooth and optimized animation by utilizing the browser's built-in graphics capabilities. It can be canceled using the cancelAnimationFrame() method.
+
+Chapter 14: HTML5 APIS
+The data Attribute: Is a way of embedding data in a web page using custom attributes that are ignored by the browser. 
+*/
+ 
+
 /* WEEK 06
 Chaper 11 & 13: Further Functions, and Ajax
 QUIZ NINJA PROJECT 
@@ -138,7 +170,19 @@ const game = {
         }
         //end of main loop
         this.gameOver();
+
+        hiScore(){
+            const hi = localStorage.getItem('highScore') || 0;
+            if(this.score > hi || hi === 0) {
+              localStorage.setItem('highScore',this.score);
+              view.render(view.info,'** NEW HIGH SCORE! **');
+            }
+            return localStorage.getItem('highScore');
+          }
+        }
     },
+
+
      //View Object
      const view = {
         score: document.querySelector('#score strong'),
@@ -155,12 +199,13 @@ const game = {
             this.render(this.score,game.score);
             this.render(this.result,'');
             this.render(this.info,'');
-            this.resetForm();
+            this.render(this.hiScore, game.hiScore());
         }
         teardown(){
             this.hide(this.question);
             this.hide(this.response);
             this.show(this.start);
+            this.render(this.hiScore, game.hiScore());
         }
         resetForm(){
             this.response.answer.value = '';
@@ -193,8 +238,7 @@ const game = {
     else {
         this.gameOver();
     }
-    },
-};
+    }
     check(response){
         const answer = this.question.realName;
         if(response === answer){
@@ -205,7 +249,7 @@ const game = {
                 view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});
                 alert(`Wrong! The correct answer was ${answer}`);
             }
-        },
+        }
        /* check(event){
             event.preventDefault();
             const response = view.response.answer.value;
