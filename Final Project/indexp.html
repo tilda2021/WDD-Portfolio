@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> WDD 330 FINAL PROJECT</title>
+      <link rel="stylesheet" href="stylep.css">   
+      <script src="executep.js"></script>
+   </head>
+   <body>
+       <header>
+           <a href="#" class="logo">Tillys Macarons<span></span></a>
+           <div class="menuToggle" onclick="toggleMenu();"></div>
+           <ul class="navigate">
+               <li><a href="#banner" onclick="toggleMenu();">Home</a></li>
+               <li><a href="#about" onclick="toggleMenu();">About</a></li>
+               <li><a href="#menu" onclick="toggleMenu();">Menu</a></li>
+               <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+           </ul>
+           </header>
+       <section class="banner" id="banner">
+           <div class="content">
+               <h2>We all need a little sweetness</h2>
+               <bold><p>Life is not always easy and neither is making sweet treats but I've got your back.</p></bold>
+               <!--<a href="#" class="btn">Menu</a> -->
+               </div>
+               </section>
+               <section class="about" id="about">
+                   <div class="row">
+                       <div class="col50">
+                           <h2 class="titleText"><span>A</span>bout The Owner</h2>
+                           <p>Hi, I am Matilda and I am the owner of Tillys Macaron. 
+                               <br><br>I started this business a few months after I discovered the wonderful world of Macarons. I had come across a video tutorial on how to make them and decided to make them for my son's first birthday. 
+                               <br>Oh! boy, did I fall in love with them. The way they melted in the mouth, and sweet goodness that filled my heart after each bite was wonderful. 
+                               <br><br>I decided it would be a waste to not share this with others. Of course, making these delicious treats were tough but with lots of practice and encouragement from family and friends, I mastered these finicky goodness and decided with was time to share it with the world.
+                               <br><br>This is how Tilly's Macarons came to be.<br><br>Welcome to my little online kitchen where I display all the beautiful macarons from my live kitchen</p>
+                       </div>
+                       <div class="col50">
+                           <div class="imgBx">
+                               <img src="image1.jpg">
+                           </div>
+                       </div>
+                   </div>
+               </section>
+               <section class="menu" id="menu">
+               <!-- <div class="row"> -->
+                    <div class="title">
+                        <h2 class="titleText"><span>M</span>enu</h2>
+                        <p>Take a tour through the menu and find what makes your taste buds tingle<br><br>ENJOY.</p>
+                    </div>
+                    <div class="content">
+                        <div class="box">
+                            <div class="imgBx">
+                            <img src="image2.jpg">
+                            </div>
+                        <div class="text">
+                            <h3><Fieldset>Chocolate Macarons</Fieldset></h3>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="imgBx">
+                        <img src="mymacaron2.jpeg">
+                        </div>
+                    <div class="text">
+                        <h3><Fieldset>Raspberry Macarons</Fieldset></h3>
+                        </div>
+                        </div>
+                        <div class="box">
+                            <div class="imgBx">
+                            <img src="image5.jpg">
+                            </div>
+                        <div class="text">
+                            <h3><Fieldset>Hazelnut Macarons</Fieldset></h3>
+                            </div>
+                            </div>
+                            <div class="box">
+                                <div class="imgBx">
+                                <img src="image4.jpg">
+                                </div>
+                            <div class="text">
+                                <h3><Fieldset>Holiday Special</Fieldset></h3>
+                                </div>
+                                </div>
+                        <div class="box">
+                            <div class="imgBx">
+                            <img src="image8.jpeg">
+                            </div>
+                        <div class="text">
+                            <h3><Fieldset>Watermelon Macarons</Fieldset></h3>
+                            </div>
+                            </div>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <a href="#" class="btn">Back To Home</a>
+                            </div>
+            </section>
+            <section class="contact" id="contact">
+                <div class="title">
+                    <h2 class="titleText"><span>C</span>ontact Us</h2>
+                
+              
+                <p>Contact us with your questions and to place your orders<p>
+                <div id="error_message"></div>
+                <form id="myform" onsubmit="return validate();">
+                  <div class="input_field">
+                      <input type="text" placeholder="Name" id="name">
+                  </div>
+                  <div class="input_field">
+                      <input type="text" placeholder="Subject" id="subject">
+                  </div>
+                  <div class="input_field">
+                      <input type="text" placeholder="Phone" id="phone">
+                  </div>
+                  <div class="input_field">
+                      <input type="text" placeholder="Email" id="email">
+                  </div>
+                  <div class="input_field">
+                      <textarea placeholder="Message" id="message"></textarea>
+                  </div>
+                  <div class="btn">
+                      <input type="submit">
+                  </div>
+                </form>
+              </div>
+            </section> 
+            <div class="copyrightText">
+                <p>Copyright 2021 <a href="#">Tillys Macarons</a>. All rights Reserved</p>
+            </div>
+               </body>
+   </html>
